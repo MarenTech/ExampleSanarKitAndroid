@@ -75,5 +75,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation(files("libs/sanarkit-release-1.0.1.aar"))
+    implementation(files("libs/sanarkit-release-1.0.3.aar"))
 }
