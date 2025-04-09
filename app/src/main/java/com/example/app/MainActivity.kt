@@ -50,6 +50,12 @@ class MainActivity : ComponentActivity() {
             sanarKit.gotoAppointmentListView()
         }
 
+        // Button to navigate directly to specific appointment details by providing Appointment Id & Doctor Id
+        val srConsultation = findViewById<Button>(R.id.sr_consultation)
+        srConsultation.setOnClickListener {
+            sanarKit.gotoConsultationView("PRE0125166855", "EMP114")
+        }
+
         // Button to disconnect from Sanar Services
         val srDisconnect = findViewById<Button>(R.id.sr_disconnect_button)
         srDisconnect.setOnClickListener {
