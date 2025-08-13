@@ -2,6 +2,7 @@ package com.example.app
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
+import com.sanarcare.sanarkit.SKEnvironment
 import com.sanarcare.sanarkit.SanarKit
 import com.sanarcare.sanarkit.UserInfo
 
@@ -25,7 +26,8 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         // initializing Sanar Connect
         val sanarKit = SanarKit(this)
-
+        // Set the environment for Sanar Connect (default: Production) : Development or Production
+        // sanarKit.setEnvironment(SKEnvironment.DEVELOPMENT)
         // Connect to Sanar Services
         val srConnect = findViewById<Button>(R.id.sr_connect_button)
         srConnect.setOnClickListener {
@@ -34,6 +36,13 @@ class MainActivity : ComponentActivity() {
                 authToken = "<auth-token>",
                 bundleId = "com.example.demo"
             )
+        }
+
+        // Button to initiate Sanar Booking flow
+        val srDasboard = findViewById<Button>(R.id.sr_dashboard)
+        srDasboard.setOnClickListener {
+            // Sanar Booking flow method
+            sanarKit.gotoDashboardView()
         }
 
         // Button to initiate Sanar Booking flow
